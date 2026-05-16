@@ -61,75 +61,34 @@
     Show this offer during your wash appointment.
   </p>
 
-  <a class="button" href="https://linktr.ee/geowashusa">
-    Book Your Wash
-  </a>
-
 </div>
 
 <script>
 
-const offers = [
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
+const offers = [];
 
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
+// 120 entries of $2 OFF
+for (let i = 0; i < 120; i++) {
+  offers.push("$2 OFF");
+}
 
-  "$5 OFF",
-  "$5 OFF",
-  "$5 OFF",
+// 50 entries of $3 OFF
+for (let i = 0; i < 50; i++) {
+  offers.push("$3 OFF");
+}
 
-  "FREE AIR FRESHENER",
-  "FREE AIR FRESHENER",
-  "FREE AIR FRESHENER",
+// 20 entries of $5 OFF
+for (let i = 0; i < 20; i++) {
+  offers.push("$5 OFF");
+}
 
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
-  "$2 OFF",
+// 9 entries of FREE AIR FRESHENER
+for (let i = 0; i < 9; i++) {
+  offers.push("FREE AIR FRESHENER");
+}
 
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-  "$3 OFF",
-
-  "$5 OFF",
-  "$5 OFF",
-  "$5 OFF",
-
-  "FREE AIR FRESHENER",
-  "FREE AIR FRESHENER",
-  "FREE AIR FRESHENER",
-
-  "$2 OFF",
-  "$3 OFF",
-
-  "🎉 FREE PREMIUM WASH 🎉"
-
-];
+// 1 rare jackpot entry
+offers.push("🎉 FREE PREMIUM WASH 🎉");
 
 const randomOffer =
   offers[Math.floor(Math.random() * offers.length)];
@@ -155,6 +114,8 @@ if (randomOffer.includes("FREE PREMIUM WASH")) {
       animation: pop 1s infinite;
       text-align: center;
       padding-top: 100px;
+      color: white;
+      font-weight: bold;
     ">
       🎉 🎊 ✨ 🚗 🎉 🎊 ✨
       <br><br>
@@ -164,5 +125,3 @@ if (randomOffer.includes("FREE PREMIUM WASH")) {
 
   document.body.appendChild(confetti);
 }
-
-</script>
