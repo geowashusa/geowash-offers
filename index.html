@@ -35,93 +35,60 @@
       color: #2E7D32;
       margin: 30px 0;
     }
-
-    .button {
-      display: inline-block;
-      padding: 15px 25px;
-      background: #1E88E5;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
   </style>
 </head>
 
 <body>
 
 <div class="card">
-
   <h1>🎉 Your GeoWash Offer</h1>
 
   <div class="offer" id="offer"></div>
 
-  <p>
-    Show this offer during your wash appointment.
-  </p>
-
+  <p>Show this offer during your wash appointment.</p>
 </div>
 
 <script>
-
 const offers = [];
 
-// 120 entries of $2 OFF
-for (let i = 0; i < 120; i++) {
-  offers.push("$2 OFF");
-}
+for (let i = 0; i < 120; i++) offers.push("$2 OFF");
+for (let i = 0; i < 50; i++) offers.push("$3 OFF");
+for (let i = 0; i < 20; i++) offers.push("$5 OFF");
+for (let i = 0; i < 9; i++) offers.push("FREE AIR FRESHENER");
 
-// 50 entries of $3 OFF
-for (let i = 0; i < 50; i++) {
-  offers.push("$3 OFF");
-}
-
-// 20 entries of $5 OFF
-for (let i = 0; i < 20; i++) {
-  offers.push("$5 OFF");
-}
-
-// 9 entries of FREE AIR FRESHENER
-for (let i = 0; i < 9; i++) {
-  offers.push("FREE AIR FRESHENER");
-}
-
-// 1 rare jackpot entry
 offers.push("🎉 FREE PREMIUM WASH 🎉");
 
-const randomOffer =
-  offers[Math.floor(Math.random() * offers.length)];
+const randomOffer = offers[Math.floor(Math.random() * offers.length)];
 
 document.getElementById("offer").innerText = randomOffer;
 
 if (randomOffer.includes("FREE PREMIUM WASH")) {
-
-  document.body.style.background =
-    "linear-gradient(135deg, #0f172a, #1e3a8a)";
+  document.body.style.background = "linear-gradient(135deg, #0f172a, #1e3a8a)";
 
   const confetti = document.createElement("div");
 
   confetti.innerHTML = `
     <div style="
       position: fixed;
-      top: 0;
+      top: 30px;
       left: 0;
       width: 100%;
-      height: 100%;
       pointer-events: none;
-      font-size: 50px;
-      animation: pop 1s infinite;
+      font-size: 42px;
       text-align: center;
-      padding-top: 100px;
       color: white;
       font-weight: bold;
+      z-index: 999;
     ">
       🎉 🎊 ✨ 🚗 🎉 🎊 ✨
-      <br><br>
+      <br>
       JACKPOT!
     </div>
   `;
 
   document.body.appendChild(confetti);
 }
+</script>
+
+</body>
+</html>
